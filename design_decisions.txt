@@ -1,0 +1,23 @@
+1. Maintainability: 
+	The program is simple, clear, and easy to maintain. It uses a dictionary where the keys are sorted anagrams, and each key is associated with a list of words.
+	This structure is intuitive and does not rely on complex external libraries, ensuring the code remains manageable and extensible.
+
+2. Scalability: 
+	The dictionary-based approach scales well as it grows proportionally with the number of words. 
+	For handling 10 million words, no significant changes are required. Each word is sorted (O(m log m)) and inserted into the dictionary (O(1)), which is efficient for typical word lengths.
+
+3. Performance: 
+	The program operates efficiently by minimizing operations. The dictionary ensures fast access and insertion. Sorting each word is the most time-consuming operation (O(m log m)), but it is manageable for typical word lengths.
+	 No external libraries are used, minimizing overhead.
+
+Scalability Considerations:
+
+	Handling 10 million words:
+		The program can handle 10 million words without significant changes. The dictionary structure is well-suited for this scale, with minimal overhead.
+
+	Handling 100 billion words (and beyond):
+		For 100 billion words, the following changes would be required:
+		Parallel Processing: Distribute the processing across multiple machines to handle the large volume.
+		Disk Storage: Use a database or disk storage for intermediate results, as in-memory storage would be inefficient.
+		Batch Processing: Process the data in batches to avoid overloading memory and improve overall performance.
+		Database: Use a database for efficient querying and indexing, replacing in-memory dictionaries.
